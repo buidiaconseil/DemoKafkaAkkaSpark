@@ -6,7 +6,7 @@ from lxml import etree
 from bs4 import BeautifulSoup
 
 #create the object, assign it to a variable
-
+count = 0
 with open("content.rss") as stream:
     for line in stream:
         xmlString=json.loads(line)
@@ -19,7 +19,9 @@ with open("content.rss") as stream:
                     print("CHANNEL")
                     print(channel.xpath("title")[0].text)
                     print(channel.xpath("description")[0].text)
+                    
                     for item in channel.xpath("item"):
+                        count=count+1
                         print(item.xpath("title")[0].text)
                         if hasattr(item, 'description'):
                             print(item.xpath("description")[0].text)
@@ -29,6 +31,8 @@ with open("content.rss") as stream:
                             print(item.xpath("author")[0].text)
             except :
                 print ("Error")
+
+print ("nb:"+str(count))
                 
         
         

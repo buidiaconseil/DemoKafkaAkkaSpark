@@ -637,4 +637,7 @@
 - from: iamexpat
   category: news
   url: https://www.iamexpat.nl/rss/news-netherlands/news
+- from: cbs
+  category: news
+  url: https://www.cbs.nl/en-gb/rss-feeds/all-news-items
 
