@@ -505,3 +505,136 @@
 - from: skynews
   category: Strange News
   url: http://feeds.skynews.com/feeds/rss/strange.xml
+- from: cnet
+  category: All
+  url: https://www.cnet.com/rss/all/
+- from: newscientist
+  category: all
+  url: http://feeds.newscientist.com/
+- from: worldbank
+  category: Africa
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=Africa
+- from: worldbank
+  category: East Asia and Pacific
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=East+Asia+and+Pacific
+- from: worldbank
+  category: Europe & Central Asia
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=Europe+and+Central+Asia
+- from: worldbank
+  category: Latin America & Caribbean
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=Latin+America+and+Caribbean
+- from: worldbank
+  category: Middle East & North Africa
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=Middle+East+and+North+Africa
+- from: worldbank
+  category: South Asia
+  url: http://search.worldbank.org/api/v2/news.atom?admreg_exact=South+Asia
+- from: chinadaily
+  category: China News
+  url: http://www.chinadaily.com.cn/rss/china_rss.xml
+- from: chinadaily
+  category: Bizchina News
+  url: http://www.chinadaily.com.cn/rss/bizchina_rss.xml
+- from: chinadaily
+  category: World News
+  url: http://www.chinadaily.com.cn/rss/world_rss.xml
+- from: chinadaily
+  category: Opinion News
+  url: http://www.chinadaily.com.cn/rss/opinion_rss.xml
+- from: chinadaily
+  category: Sports News
+  url: http://www.chinadaily.com.cn/rss/sports_rss.xml
+- from: chinadaily
+  category: Entertainment News
+  url: http://www.chinadaily.com.cn/rss/entertainment_rss.xml
+- from: chinadaily
+  category: Life News
+  url: http://www.chinadaily.com.cn/rss/lifestyle_rss.xml
+- from: chinadaily
+  category: China Daily News
+  url: http://www.chinadaily.com.cn/rss/cndy_rss.xml
+- from: chinadaily
+  category: HK Edition News
+  url: http://www.chinadaily.com.cn/rss/hk_rss.xml
+- from: xinhuanet
+  category: World
+  url: http://www.xinhuanet.com/english/rss/worldrss.xml
+- from: xinhuanet
+  category: Business  
+  url: http://www.xinhuanet.com/english/rss/businessrss.xml
+- from: xinhuanet
+  category: Sports
+  url: http://www.xinhuanet.com/english/rss/sportsrss.xml
+- from: xinhuanet
+  category: Sci & Tech
+  url: http://www.xinhuanet.com/english/rss/scirss.xml
+- from: xinhuanet
+  category: Travel
+  url: http://www.xinhuanet.com/english/rss/travelrss.xml
+- from: xinhuanet
+  category: Odd News
+  url: http://www.xinhuanet.com/english/rss/oddrss.xml
+- from: xinhuanet
+  category: China
+  url: http://www.xinhuanet.com/english/rss/chinarss.xml
+- from: xinhuanet
+  category: Culture & Edu
+  url: http://www.xinhuanet.com/english/rss/culturerss.xml
+- from: xinhuanet
+  category: Entertainment
+  url: http://www.xinhuanet.com/english/rss/entertainmentrss.xml
+- from: xinhuanet
+  category: Health
+  url: http://www.xinhuanet.com/english/rss/healthrss.xml
+- from: xinhuanet
+  category: In-Depth
+  url: http://www.xinhuanet.com/english/rss/indepthrss.xml
+- from: xinhuanet
+  category: New China
+  url: http://www.xinhuanet.com/english/rss/newchina.xml
+- from: cntv
+  category: China
+  url: http://english.cntv.cn/service/rss/0/index.xml
+- from: cntv
+  category: World
+  url: http://english.cntv.cn/service/rss/1/index.xml
+- from: cntv
+  category: Biz
+  url: http://english.cntv.cn/service/rss/4/index.xml
+- from: cntv
+  category: Culture
+  url: http://english.cntv.cn/service/rss/3/index.xml
+- from: cntv
+  category: High Tech
+  url: http://english.cntv.cn/service/rss/6/index.xml
+- from: cntv
+  category: Sports
+  url: http://english.cntv.cn/service/rss/5/index.xml
+- from: cntv
+  category: Travel
+  url: http://english.cntv.cn/service/rss/2/index.xml
+- from: themoscowtimes
+  category: News
+  url: https://themoscowtimes.com/feeds/news.xml
+- from: themoscowtimes
+  category: Business
+  url: https://themoscowtimes.com/feeds/business.xml
+- from: themoscowtimes
+  category: Opinion
+  url: https://themoscowtimes.com/feeds/opinion.xml
+- from: themoscowtimes
+  category: City
+  url: https://themoscowtimes.com/feeds/city.xml
+- from: themoscowtimes
+  category: Meanwhile
+  url: https://themoscowtimes.com/feeds/meanwhile.xml
+- from: themoscowtimes
+  category: World Cup
+  url: https://themoscowtimes.com/feeds/worldcup.xml
+- from: nikkei
+  category: nar
+  url: https://asia.nikkei.com/rss/feed/nar
+- from: iamexpat
+  category: news
+  url: https://www.iamexpat.nl/rss/news-netherlands/news
+
