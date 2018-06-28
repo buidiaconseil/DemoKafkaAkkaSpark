@@ -1,6 +1,507 @@
 - from: foxnews
   category: latest
   url: http://feeds.foxnews.com/foxnews/latest?format=xml
+- from: foxnews
+  category: most-popular
+  url: http://feeds.foxnews.com/foxnews/most-popular?format=xml
+- from: foxnews
+  category: entertainment
+  url: http://feeds.foxnews.com/foxnews/entertainment?format=xml
+- from: foxnews
+  category: health
+  url: http://feeds.foxnews.com/foxnews/health?format=xml
+- from: foxnews
+  category: lifestyle
+  url: http://feeds.foxnews.com/foxnews/section/lifestyle?format=xml
+- from: foxnews
+  category: opinion
+  url: http://feeds.foxnews.com/foxnews/opinion?format=xml
+- from: foxnews
+  category: politics
+  url: http://feeds.foxnews.com/foxnews/politics?format=xml
+- from: foxnews
+  category: science
+  url: http://feeds.foxnews.com/foxnews/science?format=xml
+- from: foxnews
+  category: sports
+  url: http://feeds.foxnews.com/foxnews/sports?format=xml
+- from: foxnews
+  category: tech
+  url: http://feeds.foxnews.com/foxnews/tech?format=xml
+- from: foxnews
+  category: travel
+  url: http://feeds.foxnews.com/foxnews/travel?format=xml
+- from: foxnews
+  category: national
+  url: http://feeds.foxnews.com/foxnews/national?format=xml
+- from: foxnews
+  category: world
+  url: http://feeds.foxnews.com/foxnews/world?format=xml
 - from: economist
   category: business finance
   url: https://www.economist.com/sections/business-finance/rss.xml
+- from: economist
+  category: economics
+  url: https://www.economist.com/sections/economics/rss.xml
+- from: economist
+  category: science technology
+  url: https://www.economist.com/sections/science-technology/rss.xml
+- from: economist
+  category: culture
+  url: https://www.economist.com/sections/culture/rss.xml
+- from: economist
+  category: united states
+  url: https://www.economist.com/sections/united-states/rss.xml
+- from: economist
+  category: britain
+  url: https://www.economist.com/sections/britain/rss.xml
+- from: economist
+  category: china
+  url: https://www.economist.com/sections/china/rss.xml
+- from: economist
+  category: americas
+  url: https://www.economist.com/sections/americas/rss.xml
+- from: economist
+  category: middle east africa
+  url: https://www.economist.com/sections/middle-east-africa/rss.xml
+- from: economist
+  category: obituary
+  url: https://www.economist.com/sections/obituary/rss.xml
+- from: economist
+  category: leaders
+  url: https://www.economist.com/sections/leaders/rss.xml
+- from: economist
+  category: international
+  url: https://www.economist.com/sections/international/rss.xml
+- from: economist
+  category: europe
+  url: https://www.economist.com/sections/europe/rss.xml
+- from: economist
+  category: asia
+  url: https://www.economist.com/sections/asia/rss.xml
+- from: economist
+  category: world
+  url: https://www.economist.com/rss/the_world_this_week_rss.xml
+- from: economist
+  category: letters
+  url: https://www.economist.com/rss/letters_rss.xml
+- from: economist
+  category: leaders
+  url: https://www.economist.com/rss/leaders_rss.xml
+- from: economist
+  category: briefings
+  url: https://www.economist.com/rss/briefings_rss.xml
+- from: economist
+  category: special reports
+  url: https://www.economist.com/rss/special_reports_rss.xml
+- from: economist
+  category: britain
+  url: https://www.economist.com/rss/britain_rss.xml
+- from: economist
+  category: europe
+  url: https://www.economist.com/rss/europe_rss.xml
+- from: economist
+  category: united states
+  url: https://www.economist.com/rss/united_states_rss.xml
+- from: economist
+  category: the americas
+  url: https://www.economist.com/rss/the_americas_rss.xml
+- from: economist
+  category: middle east and africa
+  url: https://www.economist.com/rss/middle_east_and_africa_rss.xml
+- from: economist
+  category: asia
+  url: https://www.economist.com/rss/asia_rss.xml
+- from: economist
+  category: china
+  url: https://www.economist.com/rss/china_rss.xml
+- from: economist
+  category: international
+  url: https://www.economist.com/rss/international_rss.xml
+- from: economist
+  category: business
+  url: https://www.economist.com/rss/business_rss.xml
+- from: economist
+  category: finance and ecocomics
+  url: https://www.economist.com/rss/finance_and_economics_rss.xml
+- from: economist
+  category: science and technology
+  url: https://www.economist.com/rss/science_and_technology_rss.xml
+- from: economist
+  category: books and arts
+  url: https://www.economist.com/rss/books_and_arts_rss.xml
+- from: economist
+  category: obituary
+  url: https://www.economist.com/rss/obituary_rss.xml
+- from: economist
+  category: indicators
+  url: https://www.economist.com/rss/indicators_rss.xml
+- from: france24
+  category: world
+  url: http://www.france24.com/en/top-stories/rss
+- from: france24
+  category: europe
+  url: http://www.france24.com/en/europe/rss
+- from: france24
+  category: france
+  url: http://www.france24.com/en/france/rss
+- from: france24
+  category: africa
+  url: http://www.france24.com/en/africa/rss
+- from: france24
+  category: middle east
+  url: http://www.france24.com/en/middle-east/rss
+- from: france24
+  category: americas
+  url: http://www.france24.com/en/americas/rss
+- from: france24
+  category: asia pacific
+  url: http://www.france24.com/en/asia-pacific/rss
+- from: france24
+  category: business tech
+  url: http://www.france24.com/en/business/rss
+- from: france24
+  category: culture
+  url: http://www.france24.com/en/culture/rss
+- from: france24
+  category: earth
+  url: http://www.france24.com/en/earth/rss
+- from: france24
+  category: health
+  url: http://www.france24.com/en/health/rss
+- from: cnn
+  category: Top Stories
+  url: http://rss.cnn.com/rss/edition.rss
+- from: cnn
+  category: World
+  url: http://rss.cnn.com/rss/edition_world.rss
+- from: cnn
+  category: Africa
+  url: http://rss.cnn.com/rss/edition_africa.rss
+- from: cnn
+  category: Americas
+  url: http://rss.cnn.com/rss/edition_americas.rss
+- from: cnn
+  category: Asia
+  url: http://rss.cnn.com/rss/edition_asia.rss
+- from: cnn
+  category: Europe
+  url: http://rss.cnn.com/rss/edition_europe.rss
+- from: cnn
+  category: Middle East
+  url: http://rss.cnn.com/rss/edition_meast.rss
+- from: cnn
+  category: U.S.
+  url: http://rss.cnn.com/rss/edition_us.rss
+- from: cnn
+  category: Money
+  url: http://rss.cnn.com/rss/money_news_international.rss
+- from: cnn
+  category: Technology
+  url: http://rss.cnn.com/rss/edition_technology.rss
+- from: cnn
+  category: Science Space
+  url: http://rss.cnn.com/rss/edition_space.rss
+- from: cnn
+  category: Entertainment
+  url: http://rss.cnn.com/rss/edition_entertainment.rss
+- from: cnn
+  category: World Sport
+  url: http://rss.cnn.com/rss/edition_sport.rss
+- from: cnn
+  category: Football
+  url: http://rss.cnn.com/rss/edition_football.rss
+- from: cnn
+  category: Golf
+  url: http://rss.cnn.com/rss/edition_golf.rss
+- from: cnn
+  category: Motorsport
+  url: http://rss.cnn.com/rss/edition_motorsport.rss
+- from: cnn
+  category: Tennis
+  url: http://rss.cnn.com/rss/edition_tennis.rss
+- from: cnn
+  category: Travel
+  url: http://rss.cnn.com/rss/edition_travel.rss
+- from: cnn
+  category: Video
+  url: http://rss.cnn.com/rss/cnn_freevideo.rss
+- from: cnn
+  category: Most Recent
+  url: http://rss.cnn.com/rss/cnn_latest.rss
+- from: reuters
+  category: Arts
+  url: http://feeds.reuters.com/news/artsculture
+- from: reuters
+  category: Business
+  url: http://feeds.reuters.com/reuters/businessNews
+- from: reuters
+  category: Company News
+  url: http://feeds.reuters.com/reuters/companyNews
+- from: reuters
+  category: Entertainment
+  url: http://feeds.reuters.com/reuters/entertainment
+- from: reuters
+  category: Environment
+  url: http://feeds.reuters.com/reuters/environment
+- from: reuters
+  category: Health News
+  url: http://feeds.reuters.com/reuters/healthNews
+- from: reuters
+  category: Health News
+  url: http://feeds.reuters.com/reuters/healthNews
+- from: reuters
+  category: Lifestyle
+  url: http://feeds.reuters.com/reuters/lifestyle
+- from: reuters
+  category: Money
+  url: http://feeds.reuters.com/news/wealth
+- from: reuters
+  category: Most Read Articles
+  url: http://feeds.reuters.com/reuters/MostRead
+- from: reuters
+  category: Oddly Enough
+  url: http://feeds.reuters.com/reuters/oddlyEnoughNews
+- from: reuters
+  category: Pictures
+  url: http://feeds.reuters.com/ReutersPictures
+- from: reuters
+  category: People
+  url: http://feeds.reuters.com/reuters/peopleNews
+- from: reuters
+  category: Politics
+  url: http://feeds.reuters.com/Reuters/PoliticsNews
+- from: reuters
+  category: Science
+  url: http://feeds.reuters.com/reuters/scienceNews
+- from: reuters
+  category: Sports
+  url: http://feeds.reuters.com/reuters/sportsNews
+- from: reuters
+  category: Technology
+  url: http://feeds.reuters.com/reuters/technologyNews
+- from: reuters
+  category: Top News
+  url: http://feeds.reuters.com/reuters/topNews
+- from: reuters
+  category: US News
+  url: http://feeds.reuters.com/Reuters/domesticNews
+- from: reuters
+  category: World
+  url: http://feeds.reuters.com/Reuters/worldNews
+- from: nytimes
+  category: home page
+  url: http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
+- from: nytimes
+  category: World
+  url: https://www.nytimes.com/services/xml/rss/nyt/World.xml
+- from: nytimes
+  category: Africa
+  url: https://www.nytimes.com/services/xml/rss/nyt/Africa.xml
+- from: nytimes
+  category: Americas
+  url: https://www.nytimes.com/services/xml/rss/nyt/Americas.xml
+- from: nytimes
+  category: Asia Pacific
+  url: https://www.nytimes.com/services/xml/rss/nyt/AsiaPacific.xml
+- from: nytimes
+  category: Europe
+  url: https://www.nytimes.com/services/xml/rss/nyt/Europe.xml
+- from: nytimes
+  category: Middle East
+  url: https://www.nytimes.com/services/xml/rss/nyt/MiddleEast.xml
+- from: nytimes
+  category: US
+  url: https://www.nytimes.com/services/xml/rss/nyt/US.xml
+- from: nytimes
+  category: Education
+  url: https://www.nytimes.com/services/xml/rss/nyt/Education.xml
+- from: nytimes
+  category: Politics
+  url: https://www.nytimes.com/services/xml/rss/nyt/Politics.xml
+- from: nytimes
+  category: Business
+  url: http://feeds.nytimes.com/nyt/rss/Business
+- from: nytimes
+  category: Energy Environment
+  url: https://www.nytimes.com/services/xml/rss/nyt/EnergyEnvironment.xml
+- from: nytimes
+  category: Small Business
+  url: https://www.nytimes.com/services/xml/rss/nyt/SmallBusiness.xml
+- from: nytimes
+  category: Economy
+  url: https://www.nytimes.com/services/xml/rss/nyt/Economy.xml
+- from: nytimes
+  category: Deal Book
+  url: https://www.nytimes.com/services/xml/rss/nyt/Dealbook.xml
+- from: nytimes
+  category: Media And Advertising
+  url: https://www.nytimes.com/services/xml/rss/nyt/MediaandAdvertising.xml
+- from: nytimes
+  category: Your Money
+  url: https://www.nytimes.com/services/xml/rss/nyt/YourMoney.xml
+- from: nytimes
+  category: Technology
+  url: http://feeds.nytimes.com/nyt/rss/Technology
+- from: nytimes
+  category: Bits Blogs
+  url: http://bits.blogs.nytimes.com/feed/
+- from: nytimes
+  category: Personal Tech
+  url: https://www.nytimes.com/services/xml/rss/nyt/PersonalTech.xml
+- from: nytimes
+  category: Sports
+  url: https://www.nytimes.com/services/xml/rss/nyt/Sports.xml
+- from: nytimes
+  category: Science
+  url: https://www.nytimes.com/services/xml/rss/nyt/Science.xml
+- from: nytimes
+  category: Environment
+  url: https://www.nytimes.com/services/xml/rss/nyt/Environment.xml
+- from: nytimes
+  category: Space
+  url: https://www.nytimes.com/services/xml/rss/nyt/Space.xml
+- from: nytimes
+  category: Health
+  url: https://www.nytimes.com/services/xml/rss/nyt/Health.xml
+- from: nytimes
+  category: Research
+  url: https://www.nytimes.com/services/xml/rss/nyt/Research.xml
+- from: nytimes
+  category: Nutrition
+  url: https://www.nytimes.com/services/xml/rss/nyt/Nutrition.xml
+- from: nytimes
+  category: Health Care Policy
+  url: https://www.nytimes.com/services/xml/rss/nyt/HealthCarePolicy.xml
+- from: nytimes
+  category: Views
+  url: https://www.nytimes.com/services/xml/rss/nyt/Views.xml
+- from: cnbc
+  category: Top News
+  url: https://www.cnbc.com/id/100003114/device/rss/rss.html
+- from: cnbc
+  category: World News
+  url: https://www.cnbc.com/id/100727362/device/rss/rss.html
+- from: cnbc
+  category: US News
+  url: https://www.cnbc.com/id/15837362/device/rss/rss.html
+- from: cnbc
+  category: Asia News
+  url: https://www.cnbc.com/id/19832390/device/rss/rss.html
+- from: cnbc
+  category: Europe News
+  url: https://www.cnbc.com/id/19794221/device/rss/rss.html
+- from: cnbc
+  category: Business
+  url: https://www.cnbc.com/id/10001147/device/rss/rss.html
+- from: cnbc
+  category: Earnings
+  url: https://www.cnbc.com/id/15839135/device/rss/rss.html
+- from: cnbc
+  category: Commentary
+  url: https://www.cnbc.com/id/100370673/device/rss/rss.html
+- from: cnbc
+  category: Economy
+  url: https://www.cnbc.com/id/20910258/device/rss/rss.html
+- from: cnbc
+  category: Finance
+  url: https://www.cnbc.com/id/10000664/device/rss/rss.html
+- from: cnbc
+  category: Technology
+  url: https://www.cnbc.com/id/19854910/device/rss/rss.html
+- from: cnbc
+  category: Politics
+  url: https://www.cnbc.com/id/10000113/device/rss/rss.html
+- from: cnbc
+  category: Health Care
+  url: https://www.cnbc.com/id/10000108/device/rss/rss.html
+- from: cnbc
+  category: Real Estate
+  url: https://www.cnbc.com/id/10000115/device/rss/rss.html
+- from: cnbc
+  category: Wealth
+  url: https://www.cnbc.com/id/10001054/device/rss/rss.html
+- from: cnbc
+  category: Autos
+  url: https://www.cnbc.com/id/10000101/device/rss/rss.html
+- from: cnbc
+  category: Energy 
+  url: https://www.cnbc.com/id/19836768/device/rss/rss.html
+- from: cnbc
+  category: Media
+  url: https://www.cnbc.com/id/10000110/device/rss/rss.html
+- from: cnbc
+  category: Retail
+  url: https://www.cnbc.com/id/10000116/device/rss/rss.html
+- from: cnbc
+  category: Travel
+  url: https://www.cnbc.com/id/10000739/device/rss/rss.html
+- from: cnbc
+  category: Small Business
+  url: https://www.cnbc.com/id/44877279/device/rss/rss.html
+- from: aljazeera
+  category: all
+  url: https://www.aljazeera.com/xml/rss/all.xml
+- from: nasa
+  category: Breaking News
+  url: https://www.nasa.gov/rss/dyn/breaking_news.rss
+- from: nasa
+  category: Education News
+  url: https://www.nasa.gov/rss/dyn/educationnews.rss
+- from: nasa
+  category: Image of the Day
+  url: https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss
+- from: nasa
+  category: International Space Station Reports
+  url: http://blogs.nasa.gov/stationreport/feed/
+- from: nasa
+  category: On the Station
+  url: https://www.nasa.gov/rss/dyn/onthestation_rss.rss
+- from: nasa
+  category: Kepler Mission
+  url: https://www.nasa.gov/rss/dyn/mission_pages/kepler/news/kepler-newsandfeatures-RSS.rss
+- from: nasa
+  category: Chandra Mission
+  url: http://www.nasa.gov/rss/dyn/chandra_images.rss
+- from: nasa
+  category: Space Station News
+  url: https://www.nasa.gov/rss/dyn/shuttle_station.rss
+- from: nasa
+  category: Solar System and Beyond News
+  url: https://www.nasa.gov/rss/dyn/solar_system.rss
+- from: nasa
+  category: Earth News
+  url: https://www.nasa.gov/rss/dyn/earth.rss
+- from: nasa
+  category: Aeronautics News
+  url: https://www.nasa.gov/rss/dyn/aeronautics.rss
+- from: nasa
+  category: Hurricane Update
+  url: https://www.nasa.gov/rss/dyn/hurricaneupdate.rss
+- from: skynews
+  category: Home
+  url: http://feeds.skynews.com/feeds/rss/home.xml
+- from: skynews
+  category: UK
+  url: http://feeds.skynews.com/feeds/rss/uk.xml
+- from: skynews
+  category: World
+  url: http://feeds.skynews.com/feeds/rss/world.xml
+- from: skynews
+  category: US
+  url: http://feeds.skynews.com/feeds/rss/us.xml
+- from: skynews
+  category: Business
+  url: http://feeds.skynews.com/feeds/rss/business.xml
+- from: skynews
+  category: Politics
+  url: http://feeds.skynews.com/feeds/rss/politics.xml
+- from: skynews
+  category: Technology
+  url: http://feeds.skynews.com/feeds/rss/technology.xml
+- from: skynews
+  category: Entertainment
+  url: http://feeds.skynews.com/feeds/rss/entertainment.xml
+- from: skynews
+  category: Strange News
+  url: http://feeds.skynews.com/feeds/rss/strange.xml

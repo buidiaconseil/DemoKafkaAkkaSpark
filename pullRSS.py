@@ -12,7 +12,7 @@ with open("listRSS.yaml") as stream:
     print ("load")
     for data in listRSS:
         print (data['url'])
-        contents = urllib2.urlopen(data['url']).read().decode('utf-8')
+        contents = urllib2.urlopen(data['url']).read().decode('iso-8859-1')
         print (contents)
         soup = BeautifulSoup(contents)
         file.write(json.dumps(contents)+"\n")
