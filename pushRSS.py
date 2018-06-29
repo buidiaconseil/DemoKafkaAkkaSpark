@@ -16,21 +16,39 @@ with open("content.rss") as stream:
             try: 
                 tree = etree.fromstring(bytes(bytearray(xmlString, encoding='iso-8859-1')))
                 for channel in tree.xpath("/rss/channel"):
-                    print("CHANNEL")
-                    print(channel.xpath("title")[0].text)
-                    print(channel.xpath("description")[0].text)
+
+                    titleChannel=channel.xpath("title")[0].text
+                    descriptionChannel=channel.xpath("title")[0].text
                     
                     for item in channel.xpath("item"):
-                        count=count+1
-                        print(item.xpath("title")[0].text)
-                        if hasattr(item, 'description'):
-                            print(item.xpath("description")[0].text)
-                        if hasattr(item, 'dc:creator'):
-                            print(item.xpath("dc:creator")[0].text)
-                        if hasattr(item, 'author'):
-                            print(item.xpath("author")[0].text)
-            except :
-                print ("Error")
+                        try:
+                            data = {}
+
+                            data['title']=item.xpath("title")[0].text
+                            if item.xpath('pubDate'):
+                                data['date']=item.xpath("pubDate")[0].text
+                            if item.xpath("description"):
+                                data['description']=item.xpath("description")[0].text
+                                #print(item.xpath("description")[0].text)
+                            if item.xpath("creator"):
+                                data['author']=item.xpath("creator")[0].text
+                                #print(item.xpath("creator")[0].text)
+                            if item.xpath("author"):
+                                data['author']=item.xpath("author")[0].text
+                                #print(item.xpath("author")[0].text)
+                            if item.xpath("category"):
+                                categories=[]
+                                
+                                for cat in item.xpath("category"):
+                                    categories.append(cat.text)
+                                data['categories']=categories
+                            print (json.dumps(data))
+                            count=count+1
+                        except Exception as e :
+                            print ("Error: ",e)
+
+            except Exception as e :
+                            print ("Error: ",e)
 
 print ("nb:"+str(count))
                 
