@@ -640,4 +640,75 @@
 - from: cbs
   category: news
   url: https://www.cbs.nl/en-gb/rss-feeds/all-news-items
-
+- from: afp
+  category: news
+  url: https://news.google.com/news?hl=en&gl=en&q=source:AFP&um=1&ie=UTF-8&output=rss&num=100
+- from: afp
+  category: associated press
+  url: https://news.google.com/news?hl=en&gl=en&q=source:Associated%20Press&um=1&ie=UTF-8&output=rss&num=100
+- from: afp
+  category: capa
+  url: https://news.google.com/news?hl=en&gl=en&q=source:CAPA&um=1&ie=UTF-8&output=rss&num=100
+- from: bloomberg
+  category: news
+  url: https://news.google.com/news?hl=en&gl=en&q=source:Bloomberg&um=1&ie=UTF-8&output=rss&num=100
+- from: unitedpressinternational
+  category: news
+  url: https://news.google.com/news?hl=en&gl=en&q=source:United%20Press%20International&um=1&ie=UTF-8&output=rss&num=100
+- from: unitedpressinternational
+  category: news
+  url: https://news.google.com/news?hl=en&gl=en&um=1&ie=UTF-8&output=rss&num=100
+- from: abcnews
+  category: Top Stories
+  url: http://feeds.abcnews.com/abcnews/topstories
+- from: abcnews
+  category: World Headlines
+  url: http://feeds.abcnews.com/abcnews/internationalheadlines
+- from: abcnews
+  category: US Headlines
+  url: http://feeds.abcnews.com/abcnews/usheadlines
+- from: abcnews
+  category: Politics Headlines
+  url: http://feeds.abcnews.com/abcnews/politicsheadlines
+- from: abcnews
+  category: The Blotter from Brian Ross
+  url: http://feeds.abcnews.com/abcnews/blotterheadlines
+- from: abcnews
+  category: Cuomo on the Case
+  url: http://feeds.abcnews.com/abcnews/thelawheadlines
+- from: abcnews
+  category: Money Headlines
+  url: http://feeds.abcnews.com/abcnews/moneyheadlines
+- from: abcnews
+  category: Technology Headlines
+  url: http://feeds.abcnews.com/abcnews/technologyheadlines
+- from: abcnews
+  category: Health Headlines
+  url: http://feeds.abcnews.com/abcnews/healthheadlines
+- from: abcnews
+  category: Entertainment Headlines
+  url: http://feeds.abcnews.com/abcnews/entertainmentheadlines
+- from: abcnews
+  category: Travel Headlines
+  url: http://feeds.abcnews.com/abcnews/travelheadlines
+- from: abcnews
+  category: ESPN Sports
+  url: http://feeds.abcnews.com/abcnews/sportsheadlines
+- from: abcnews
+  category: World News Headlines
+  url: http://feeds.abcnews.com/abcnews/worldnewsheadlines
+- from: abcnews
+  category: 20/20 Headlines
+  url: http://feeds.abcnews.com/abcnews/2020headlines
+- from: abcnews
+  category: Primetime Headlines
+  url: http://feeds.abcnews.com/abcnews/primetimeheadlines
+- from: abcnews
+  category: Nightline Headlines
+  url: http://feeds.abcnews.com/abcnews/nightlineheadlines
+- from: abcnews
+  category: Good Morning America Headlines
+  url: http://feeds.abcnews.com/abcnews/gmaheadlines
+- from: abcnews
+  category: This Week Headlines
+  url: http://feeds.abcnews.com/abcnews/thisweekheadlines
