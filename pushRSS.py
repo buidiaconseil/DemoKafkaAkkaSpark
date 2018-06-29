@@ -50,6 +50,7 @@ with open("content.rss") as stream:
                                     sleep((1000-sleeper)/1000.0)
                                 millis = time.time() * 1000
                                 lastcount=count
+                                producer.flush()
                             count=count+1
                             #producer.send(topicName, str.encode(json.dumps(data)))
                         except Exception as e :
@@ -57,7 +58,7 @@ with open("content.rss") as stream:
             except Exception as e :
                             print ("Error: ",e)
 print ("nb:"+str(count))
-                
+producer.close()                
         
         
 
