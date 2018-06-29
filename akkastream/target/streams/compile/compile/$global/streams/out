@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Dev\DemoKafkaAkkaSpark\akkastream\src\main\scala\Main.scala:13:10: expected start of definition[0m
-[0m[[0m[31merror[0m] [0m[0mimplicit val system = ActorSystem("QuickStart")[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mD:\Dev\DemoKafkaAkkaSpark\akkastream\src\main\scala\Main.scala:14:10: expected start of definition[0m
-[0m[[0m[31merror[0m] [0m[0mimplicit val materializer = ActorMaterializer()[0m
-[0m[[0m[31merror[0m] [0m[0m         ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
