@@ -4,9 +4,12 @@ import urllib
 import urllib.request as urllib2
 from lxml import etree
 from bs4 import BeautifulSoup
-
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
+#docker run -d --name kafka -p 9999:9999 -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --network kafka-net XXXXXXXXXXXXXXXXXXXXXXXXXXX
 #create the object, assign it to a variable
 count = 0
+producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
 with open("content.rss") as stream:
     for line in stream:
         xmlString=json.loads(line)
@@ -43,6 +46,8 @@ with open("content.rss") as stream:
                                     categories.append(cat.text)
                                 data['categories']=categories
                             print (json.dumps(data))
+                             
+                            producer.send('my-topic', str.encode(json.dumps(data)))
                             count=count+1
                         except Exception as e :
                             print ("Error: ",e)
