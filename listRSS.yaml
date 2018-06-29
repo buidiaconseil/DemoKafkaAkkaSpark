@@ -712,3 +712,21 @@
 - from: abcnews
   category: This Week Headlines
   url: http://feeds.abcnews.com/abcnews/thisweekheadlines
+- from: bbc
+  category: world
+  url: http://feeds.bbci.co.uk/news/world/rss.xml
+- from: weatherzone
+  category: news
+  url: http://www.weatherzone.com.au/services/rss.jsp
+- from: bbci
+  category: uk
+  url: http://feeds.bbci.co.uk/news/rss.xml
+- from: yahoo
+  category: us
+  url: http://news.yahoo.com/rss/
+- from: bbci
+  category: technology
+  url: http://feeds.bbci.co.uk/news/technology/rss.xml
+- from: bbci
+  category: business
+  url: http://feeds.bbci.co.uk/news/business/rss.xml
