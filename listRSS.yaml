@@ -1,3 +1,120 @@
+- from: business-standard
+  category: TOP STORIES
+  url: https://www.business-standard.com/rss/home_page_top_stories.rss
+- from: business-standard
+  category: LATEST NEWS
+  url: https://www.business-standard.com/rss/latest.rss
+- from: business-standard
+  category: GENERAL NEWS
+  url: https://www.business-standard.com/rss/general-news.rss
+- from: business-standard
+  category: TODAY'S PAPER
+  url: https://www.business-standard.com/rss/todays-paper.rss
+- from: business-standard
+  category: MARKET NEWS
+  url: https://www.business-standard.com/rss/markets-106.rss
+- from: business-standard
+  category: MOST POPULAR
+  url: https://www.business-standard.com/rss/most-viewed.rss
+- from: business-standard
+  category: EDITOR'S PICK
+  url: https://www.business-standard.com/rss/bsrss.xml
+- from: business-standard
+  category: ALL COMPANIES STORIES
+  url: https://www.business-standard.com/rss/companies-101.rss
+- from: business-standard
+  category: ALL ECONOMY & POLICY STORIES
+  url: https://www.business-standard.com/rss/economy-policy-102.rss
+- from: business-standard
+  category: ALL FINANCE STORIES
+  url: https://www.business-standard.com/rss/finance-103.rss
+- from: business-standard
+  category: ALL BEYOND BUSINESS STORIES
+  url: https://www.business-standard.com/rss/beyond-business-104.rss
+- from: business-standard
+  category: ALL OPINION STORIES
+  url: https://www.business-standard.com/rss/opinion-105.rss
+- from: business-standard
+  category: ALL MARKETS STORIES
+  url: https://www.business-standard.com/rss/markets-106.rss
+- from: business-standard
+  category: ALL MANAGEMENT STORIES
+  url: https://www.business-standard.com/rss/management-107.rss
+- from: business-standard
+  category: ALL TECHNOLOGY STORIES
+  url: https://www.business-standard.com/rss/technology-108.rss
+- from: business-standard
+  category: ALL SPECIALS STORIES
+  url: https://www.business-standard.com/rss/specials-109.rss
+- from: business-standard
+  category: ALL BUDGET STORIES
+  url: https://www.business-standard.com/rss/budget2018-110.rss
+- from: business-standard
+  category: ALL PF STORIES
+  url: https://www.business-standard.com/rss/pf-114.rss
+- from: business-standard
+  category: ALL CURRENT AFFAIRS STORIES
+  url: https://www.business-standard.com/rss/current-affairs-115.rss
+- from: business-standard
+  category: ALL INTERNATIONAL STORIES
+  url: https://www.business-standard.com/rss/international-116.rss
+- from: business-standard
+  category: ALL ELECTIONS STORIES
+  url: https://www.business-standard.com/rss/elections-117.rss
+- from: business-standard
+  category: ALL NEWS-IANS STORIES
+  url: https://www.business-standard.com/rss/news-ians-150.rss
+- from: business-standard
+  category: ALL NEWS-CM STORIES
+  url: https://www.business-standard.com/rss/news-cm-151.rss
+- from: business-standard
+  category: ALL POLITICS STORIES
+  url: https://www.business-standard.com/rss/politics-155.rss
+- from: business-standard
+  category: ALL B2B CONNECT STORIES
+  url: https://www.business-standard.com/rss/b2b-connect-156.rss
+- from: business-standard
+  category: ALL PARTNER CONTENT STORIES
+  url: https://www.business-standard.com/rss/partner-content-158.rss
+- from: business-standard
+  category: ALL SPECIAL1 STORIES
+  url: https://www.business-standard.com/rss/special1-163.rss
+- from: business-standard
+  category: ALL PUNDITRY STORIES
+  url: https://www.business-standard.com/rss/punditry-174.rss
+- from: business-standard
+  category: ALL EVENTS STORIES
+  url: https://www.business-standard.com/rss/events-175.rss
+- from: business-standard
+  category: ALL BS MOTORING STORIES
+  url: https://www.business-standard.com/rss/bs-motoring-176.rss
+- from: business-standard
+  category: ALL EDUCATION STORIES
+  url: https://www.business-standard.com/rss/education-179.rss
+- from: business-standard
+  category: ALL PEOPLE STORIES
+  url: https://www.business-standard.com/rss/people-180.rss
+- from: business-standard
+  category: ALL INCOME TAX STORIES
+  url: https://www.business-standard.com/rss/income-tax-182.rss
+- from: business-standard
+  category: ALL HEATH STORIES
+  url: https://www.business-standard.com/rss/heath-184.rss
+- from: business-standard
+  category: ALL HEALTH STORIES
+  url: https://www.business-standard.com/rss/health-185.rss
+- from: business-standard
+  category: ALL IPL STORIES
+  url: https://www.business-standard.com/rss/ipl-189.rss
+- from: business-standard
+  category: ALL SPORTS STORIES
+  url: https://www.business-standard.com/rss/sports-192.rss
+- from: business-standard
+  category: ALL ENTERTAINMENT STORIES
+  url: https://www.business-standard.com/rss/entertainment-193.rss
+
+
+
 - from: businesswire
   category: Automotive News
   url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlZXw==
@@ -138,12 +255,6 @@
 - from: nzherald
   category: Business
   url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000003.xml
-- from: nzherald
-  category: Sport
-  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000004.xml
-- from: nzherald
-  category: Entertainment
-  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_001501119.xml
 - from: nzherald
   category: World
   url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000002.xml
