@@ -1,3 +1,219 @@
+- from: r.se
+  category: All
+  url: https://api.sr.se/api/rss/program/2054
+- from: thenews.pl
+  category: All of thenews.pl
+  url: http://www.thenews.pl/Rss/88cec208-19c8-4431-b2b9-5b1ecec7fc6e
+- from: thenews.pl
+  category: National
+  url: http://www.thenews.pl/Rss/47e92f6a-fbb8-4bb3-9b2e-128125c4b722
+- from: thenews.pl
+  category: International
+  url: http://www.thenews.pl/Rss/a3ea7db4-6a01-4f57-a49f-5afb6c967d30
+- from: thenews.pl
+  category: Business
+  url: http://www.thenews.pl/Rss/4037dfd5-ca74-4b16-b945-d74dc2c603d7
+- from: thenews.pl
+  category: Culture
+  url: http://www.thenews.pl/Rss/42db76ed-dd37-4cad-bf6a-7fc6d618b787
+- from: thenews.pl
+  category: Sport
+  url: http://www.thenews.pl/Rss/4ff0c201-781c-4baf-b135-19c620da5be8
+- from: thespanisheconomy
+  category: all
+  url: http://www.thespanisheconomy.com/portal/site/tse/rss
+- from: thelocal
+  category: all
+  url: https://www.thelocal.es/feeds/rss.php
+- from: radionz
+  category: Pacific
+  url: https://www.radionz.co.nz/rss/pacific.xml
+- from: ajc
+  category: Top news
+  url: https://www.ajc.com/news/breaking-news-from-ajc/DdLZ2Y64tdYPqiOr3NxAwI/rss/
+- from: ajc
+  category: Top US news
+  url: https://www.ajc.com/news/national/news/VoebuTbGnQiifTE8KTw66O/rss/
+- from: ajc
+  category: AJC Obituaries
+  url: https://www.ajc.com/news/local-obituaries/atlanta-obituaries/pXnznvA49ClMIqhESUPjMP/rss/
+- from: ajc
+  category: Things to do news
+  url: https://www.accessatlanta.com/online/home/things-top-headlines/0jCBLbOiXvfWQYAi3GzTbM/rss/
+- from: ajc
+  category: Top Sports news
+  url: https://www.ajc.com/sports/sports/rEBfCU4HSRdWlZMDLIIR6I/rss/
+- from: allafrica
+  category: Top Stories
+  url: http://allafrica.com/tools/headlines/rdf/latest/headlines.rdf
+- from: allafrica
+  category: africa
+  url: http://allafrica.com/tools/headlines/rdf/africa/headlines.rdf
+- from: allafrica
+  category: central africa
+  url: http://allafrica.com/tools/headlines/rdf/centralafrica/headlines.rdf
+- from: allafrica
+  category: east africa
+  url: http://allafrica.com/tools/headlines/rdf/eastafrica/headlines.rdf
+- from: allafrica
+  category: north africa
+  url: http://allafrica.com/tools/headlines/rdf/northafrica/headlines.rdf
+- from: allafrica
+  category: southern africa
+  url: http://allafrica.com/tools/headlines/rdf/southernafrica/headlines.rdf
+- from: allafrica
+  category: west africa
+  url: http://allafrica.com/tools/headlines/rdf/westafrica/headlines.rdf
+
+- from: nzherald
+  category: Top Stories
+  url: http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml
+- from: nzherald
+  category: NZ News
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000001.xml
+- from: nzherald
+  category: Business
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000003.xml
+- from: nzherald
+  category: Sport
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000004.xml
+- from: nzherald
+  category: Rugby
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000080.xml
+- from: nzherald
+  category: Entertainment
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_001501119.xml
+- from: nzherald
+  category: World
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000002.xml
+- from: nzherald
+  category: Technology
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000005.xml
+- from: nzherald
+  category: Lifestyle
+  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000006.xml
+- from: newyorker
+  category: Everything
+  url: http://www.newyorker.com/feed/everything
+- from: newyorker
+  category: All News
+  url: http://www.newyorker.com/feed/news
+- from: newyorker
+  category: All Culture
+  url: http://www.newyorker.com/feed/culture
+- from: newyorker
+  category:  All Humor
+  url: http://www.newyorker.com/feed/humor
+- from: newyorker
+  category: All Science & Technology
+  url: http://www.newyorker.com/feed/tech
+- from: newyorker
+  category: All Business
+  url: http://www.newyorker.com/feed/business
+- from: newyorker
+  category: All Sporting Scene
+  url: http://www.newyorker.com/feed/news/sporting-scene
+- from: newyorker
+  category: Crime & Punishment
+  url: http://www.newyorker.com/feed/collection/crime-and-punishment-in-the-archive
+
+- from: wsj
+  category: World News
+  url: http://www.wsj.com/xml/rss/3_7085.xml
+- from: wsj
+  category: Opinion
+  url: http://www.wsj.com/xml/rss/3_7041.xml
+- from: wsj
+  category: U.S. Business
+  url: http://www.wsj.com/xml/rss/3_7014.xml
+- from: wsj
+  category: Markets News
+  url: http://www.wsj.com/xml/rss/3_7031.xml
+- from: wsj
+  category: Technology What's News
+  url: http://www.wsj.com/xml/rss/3_7455.xml
+- from: wsj
+  category: Lifestyle
+  url: http://www.wsj.com/xml/rss/3_7201.xml
+- from: oxfordmail
+  category: news
+  url: http://www.oxfordmail.co.uk/news/rss/
+- from: oxfordmail
+  category: sports
+  url: http://www.oxfordmail.co.uk/sport/rss/
+
+- from: esa
+  category: uk
+  url: http://www.esa.int/rssfeed/UnitedKingdom
+- from: esa
+  category: Space News
+  url: http://www.esa.int/rssfeed/Our_Activities/Space_News
+- from: esa
+  category: Observing the Earth
+  url: http://www.esa.int/rssfeed/Our_Activities/Observing_the_Earth
+- from: esa
+  category: Human Spaceflight
+  url: http://www.esa.int/rssfeed/Our_Activities/Human_Spaceflight
+- from: esa
+  category: Launchers
+  url: http://www.esa.int/rssfeed/Our_Activities/Launchers
+- from: esa
+  category: Navigation
+  url: http://www.esa.int/rssfeed/Our_Activities/Navigation
+- from: esa
+  category: Space Science
+  url: http://www.esa.int/rssfeed/Our_Activities/Space_Science
+- from: esa
+  category: Space Engineering & Technology
+  url: http://www.esa.int/rssfeed/Our_Activities/Space_Engineering_Technology
+- from: esa
+  category: Operations
+  url: http://www.esa.int/rssfeed/Our_Activities/Operations
+- from: esa
+  category: Telecommunications & Integrated Applications
+  url: http://www.esa.int/rssfeed/Our_Activities/Telecommunications_Integrated_Applications
+- from: esa
+  category: Education
+  url: http://www.esa.int/rssfeed/Education
+- from: wto
+  category: All WTO news
+  url: http://www.wto.org/library/rss/latest_news_e.xml
+- from: dw
+  category: ALL TOP STORIES AND NEWS UPDATES
+  url: http://rss.dw.com/rdf/rss-en-all
+- from: dw
+  category: Top Stories
+  url: http://rss.dw.com/rdf/rss-en-top
+- from: dw
+  category: GERMANY
+  url: http://rss.dw.com/rdf/rss-en-ger
+- from: dw
+  category: WORLD
+  url: http://rss.dw.com/rdf/rss-en-world
+- from: dw
+  category: EUROPE
+  url: http://rss.dw.com/rdf/rss-en-eu
+- from: dw
+  category: BUSINESS
+  url: http://rss.dw.com/rdf/rss-en-bus
+- from: dw
+  category: SCIENCE
+  url: http://rss.dw.com/xml/rss_en_science
+- from: dw
+  category: ENVIRONMENT
+  url: http://rss.dw.com/xml/rss_en_environment
+- from: dw
+  category: CULTURE & LIFESTYLE
+  url: http://rss.dw.com/rdf/rss-en-cul
+- from: dw
+  category: SPORTS
+  url: http://rss.dw.com/rdf/rss-en-sports
+- from: dw
+  category: VISIT GERMANY
+  url: http://rss.dw.com/rdf/rss-en-visitgermany
+- from: dw
+  category: ASIA
+  url: http://rss.dw.com/rdf/rss-en-asia
 - from: cbc
   category: Top Stories
   url: http://rss.cbc.ca/lineup/topstories.xml
