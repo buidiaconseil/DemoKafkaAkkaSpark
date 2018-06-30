@@ -1,3 +1,88 @@
+- from: businesswire
+  category: Automotive News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlZXw==
+- from: businesswire
+  category: College & University Pressroom News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGV1SXw==
+- from: businesswire
+  category: Communications News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRVQ==
+- from: businesswire
+  category: Construction & Property News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRVA==
+- from: businesswire
+  category: Consumer News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQXQ==
+- from: businesswire
+  category: Corporate Social Responsibility News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeFFlUXw==
+- from: businesswire
+  category: Defense News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVpZWQ==
+- from: businesswire
+  category: Education News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQXA==
+- from: businesswire
+  category: Energy News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQXw==
+- from: businesswire
+  category: Entertainment News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlWWw==
+- from: businesswire
+  category: Features News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFtRXA==
+- from: businesswire
+  category: Health News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlZWA==
+- from: businesswire
+  category: LatinoWire News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJfEVxWXw==
+- from: businesswire
+  category: Manufacturing News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpTXA==
+- from: businesswire
+  category: Multimedia News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVtXWw==
+- from: businesswire
+  category: Natural Resources News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQWA==
+- from: businesswire
+  category: Philanthropy News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpTXw==
+- from: businesswire
+  category: Professional Services News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQWw==
+- from: businesswire
+  category: Public Policy/Government News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQWQ==
+- from: businesswire
+  category: Retail News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEF5XWQ==
+- from: businesswire
+  category: Science News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeGVtXWQ==
+- from: businesswire
+  category: Sports News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlZXg==
+- from: businesswire
+  category: Technology News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQWg==
+- from: businesswire
+  category: Trade Show News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFxXVA==
+- from: businesswire
+  category: Transport News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpQVQ==
+- from: businesswire
+  category: Travel News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEVlZWQ==
+- from: businesswire
+  category: Venture Capital
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJdEVhZXw==
+- from: businesswire
+  category: Webcast News
+  url: https://feed.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFxQWQ==
+
 - from: r.se
   category: All
   url: https://api.sr.se/api/rss/program/2054
@@ -43,27 +128,6 @@
 - from: ajc
   category: Top Sports news
   url: https://www.ajc.com/sports/sports/rEBfCU4HSRdWlZMDLIIR6I/rss/
-- from: allafrica
-  category: Top Stories
-  url: http://allafrica.com/tools/headlines/rdf/latest/headlines.rdf
-- from: allafrica
-  category: africa
-  url: http://allafrica.com/tools/headlines/rdf/africa/headlines.rdf
-- from: allafrica
-  category: central africa
-  url: http://allafrica.com/tools/headlines/rdf/centralafrica/headlines.rdf
-- from: allafrica
-  category: east africa
-  url: http://allafrica.com/tools/headlines/rdf/eastafrica/headlines.rdf
-- from: allafrica
-  category: north africa
-  url: http://allafrica.com/tools/headlines/rdf/northafrica/headlines.rdf
-- from: allafrica
-  category: southern africa
-  url: http://allafrica.com/tools/headlines/rdf/southernafrica/headlines.rdf
-- from: allafrica
-  category: west africa
-  url: http://allafrica.com/tools/headlines/rdf/westafrica/headlines.rdf
 
 - from: nzherald
   category: Top Stories
@@ -78,9 +142,6 @@
   category: Sport
   url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000004.xml
 - from: nzherald
-  category: Rugby
-  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000080.xml
-- from: nzherald
   category: Entertainment
   url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_001501119.xml
 - from: nzherald
@@ -89,9 +150,7 @@
 - from: nzherald
   category: Technology
   url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000005.xml
-- from: nzherald
-  category: Lifestyle
-  url: http://rss.nzherald.co.nz/rss/xml/nzhrsscid_000000006.xml
+
 - from: newyorker
   category: Everything
   url: http://www.newyorker.com/feed/everything
@@ -850,9 +909,6 @@
 - from: chinadaily
   category: Life News
   url: http://www.chinadaily.com.cn/rss/lifestyle_rss.xml
-- from: chinadaily
-  category: China Daily News
-  url: http://www.chinadaily.com.cn/rss/cndy_rss.xml
 - from: chinadaily
   category: HK Edition News
   url: http://www.chinadaily.com.cn/rss/hk_rss.xml
