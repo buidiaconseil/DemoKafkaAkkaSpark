@@ -12,11 +12,11 @@ from time import sleep
 #create the object, assign it to a variable
 count = 0
 nbitems = 6548
-nbseconds = 360
+nbseconds = 3
 lastcount = 0
 topicName = 'rss-flow'
 millis = time.time() * 1000.0
-producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
+#producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
 with open("content.rss") as stream:
     for line in stream:
         xmlString=json.loads(line)
@@ -51,7 +51,7 @@ with open("content.rss") as stream:
                                 millis = time.time() * 1000
                                 lastcount=count
                             count=count+1
-                            producer.send(topicName, str.encode(json.dumps(data)))
+                            #producer.send(topicName, str.encode(json.dumps(data)))
                         except Exception as e :
                             print ("Error: ",e)
             except Exception as e :

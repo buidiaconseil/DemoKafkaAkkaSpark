@@ -1,3 +1,87 @@
+- from: cbc
+  category: Top Stories
+  url: http://rss.cbc.ca/lineup/topstories.xml
+- from: cbc
+  category: World
+  url: http://rss.cbc.ca/lineup/world.xml
+- from: cbc
+  category: Canada
+  url: http://rss.cbc.ca/lineup/canada.xml
+- from: cbc
+  category: Politics
+  url: http://rss.cbc.ca/lineup/politics.xml
+- from: cbc
+  category: Business
+  url: http://rss.cbc.ca/lineup/business.xml
+- from: cbc
+  category: Health
+  url: http://rss.cbc.ca/lineup/health.xml
+- from: cbc
+  category: Arts & Entertainment
+  url: http://rss.cbc.ca/lineup/arts.xml
+- from: cbc
+  category: Technology & Science
+  url: http://rss.cbc.ca/lineup/technology.xml
+- from: cbc
+  category: Offbeat
+  url: http://rss.cbc.ca/lineup/offbeat.xml
+- from: cbc
+  category: Aboriginal
+  url: http://www.cbc.ca/cmlink/rss-cbcaboriginal
+- from: ndtv
+  category: Top Stories
+  url: http://feeds.feedburner.com/ndtvnews-top-stories
+- from: ndtv
+  category: World
+  url: http://feeds.feedburner.com/ndtvnews-world-news
+- from: ndtv
+  category: Cricket
+  url: http://feeds.feedburner.com/ndtvsports-cricket
+- from: ndtv
+  category: South
+  url: http://feeds.feedburner.com/ndtvnews-south
+- from: ndtv
+  category: People
+  url: http://feeds.feedburner.com/ndtvnews-people
+- from: ndtv
+  category: Latest Stories
+  url: http://feeds.feedburner.com/ndtvnews-latest
+- from: ndtv
+  category: Business
+  url: http://feeds.feedburner.com/ndtvprofit-latest
+- from: ndtv
+  category: Tech
+  url: http://feeds.feedburner.com/gadgets360-latest
+- from: ndtv
+  category: Indians Abroad
+  url: http://feeds.feedburner.com/ndtvnews-indians-abroad
+- from: ndtv
+  category: Hindi
+  url: http://feeds.feedburner.com/ndtvkhabar-latest
+- from: ndtv
+  category: Trending Stories
+  url: http://feeds.feedburner.com/ndtvnews-trending-news
+- from: ndtv
+  category: Movies
+  url: http://feeds.feedburner.com/ndtvmovies-latest
+- from: ndtv
+  category: Auto
+  url: http://feeds.feedburner.com/carandbike-latest
+- from: ndtv
+  category: Health
+  url: http://feeds.feedburner.com/ndtvcooks-latest
+- from: ndtv
+  category: India
+  url: http://feeds.feedburner.com/ndtvnews-india-news
+- from: ndtv
+  category: Sports
+  url: http://feeds.feedburner.com/ndtvsports-latest
+- from: ndtv
+  category: Cities
+  url: http://feeds.feedburner.com/ndtvnews-cities-news
+- from: ndtv
+  category: Offbeat
+  url: http://feeds.feedburner.com/ndtvnews-offbeat-news
 - from: foxnews
   category: latest
   url: http://feeds.foxnews.com/foxnews/latest?format=xml
