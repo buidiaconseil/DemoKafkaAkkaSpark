@@ -11,8 +11,8 @@ from time import sleep
 #docker run -d --name kafka -p 9999:9999 -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --network kafka-net XXXXXXXXXXXXXXXXXXXXXXXXXXX
 #create the object, assign it to a variable
 count = 0
-nbitems = 6548
-nbseconds = 3
+nbitems = 10000
+nbseconds = 60
 lastcount = 0
 topicName = 'rss-flow'
 millis = time.time() * 1000.0
@@ -52,7 +52,7 @@ with open("content.rss") as stream:
                                 lastcount=count
                                 producer.flush()
                             count=count+1
-                            #producer.send(topicName, str.encode(json.dumps(data)))
+                            producer.send(topicName, str.encode(json.dumps(data)))
                         except Exception as e :
                             print ("Error: ",e)
             except Exception as e :

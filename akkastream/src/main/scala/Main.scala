@@ -9,7 +9,23 @@ import scala.concurrent._
 import scala.concurrent.duration._
 import java.nio.file.Paths
 import scala.collection.mutable._
-
+import akka.kafka._
+import akka.kafka.ConsumerSettings 
+import akka.kafka.javadsl.Consumer
+import akka.kafka.javadsl.Producer
+import java.util.concurrent.CompletableFuture
+import com.typesafe.config._
+import org.apache.kafka.clients.consumer.ConsumerConfig
+import org.apache.kafka.clients.consumer.ConsumerRecord
+import org.apache.kafka.clients.producer.ProducerRecord
+import org.apache.kafka.common.Metric
+import org.apache.kafka.common.MetricName
+import org.apache.kafka.common.TopicPartition
+import org.apache.kafka.common.serialization.ByteArrayDeserializer
+import org.apache.kafka.common.serialization.ByteArraySerializer
+import org.apache.kafka.common.serialization.StringDeserializer
+import org.apache.kafka.common.serialization.StringSerializer
+import akka.japi.Pair
 
 object Main extends App {
   private def getPipelineSource: Source[String, Future[IOResult]] = {
@@ -40,7 +56,7 @@ object Main extends App {
  def getOutput: Future[Done] = {
     getPipelineSource
       .map(_.toString)
-      .log("Before CSV Handler")
+      .log("Before start")
       .map(_.replaceAll("<[^>]*>", ""))
       .map( line =>
         Source(line.split(" +").toList)
@@ -49,8 +65,23 @@ object Main extends App {
         .filterNot(_.contains("http"))
         .filterNot(_.isEmpty).runWith(Sink.seq)
       )
-      .runForeach(x => println(x))(materializer)
+      .runForeach(x => print(x))(materializer)
   }
-  getOutput.onComplete(_ ⇒ system.terminate())
+  
+  var configString:String="kafka-clients.enable.auto.commit=false\npoll-interval=50ms\npoll-timeout=50ms\nstop-timeout=30s\nclose-timeout=20s\ncommit-timeout=15s\ncommit-time-warning=1s"
+  configString = configString+"\nwakeup-timeout = 3s\nmax-wakeups = 10\ncommit-refresh-interval = infinite\nwakeup-debug = true\nuse-dispatcher=akka.kafka.default-dispatcher\nwait-close-partition=500ms"
+  val  config:Config = ConfigFactory.parseString(configString)
+  val consumerSettings:ConsumerSettings[String, String ] =
+    ConsumerSettings.create(config, new StringDeserializer(), new StringDeserializer())
+        .withBootstrapServers("kafka:9092")
+        .withGroupId("group1")
+        .withProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
 
+  val control: Consumer.Control =
+        Consumer
+            .atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
+            .mapAsync(10, record =>  CompletableFuture.completedFuture(record.value()))
+            .to(Sink.foreach(it => System.out.println("Done with " + it)))
+            .run(materializer)
+  getOutput.onComplete(_ ⇒ system.terminate())
 }
