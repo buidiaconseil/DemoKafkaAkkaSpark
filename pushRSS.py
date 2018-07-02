@@ -16,7 +16,7 @@ nbseconds = 60
 lastcount = 0
 topicName = 'rss-flow'
 millis = time.time() * 1000.0
-#producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
+producer = KafkaProducer(bootstrap_servers=['kafka:9092'])
 with open("content.rss") as stream:
     for line in stream:
         xmlString=json.loads(line)
