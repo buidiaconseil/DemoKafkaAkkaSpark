@@ -1,6 +1,6 @@
 import akka.stream._
 import akka.stream.scaladsl._
-
+import java.util.concurrent.TimeUnit
 import java.util.stream.Collectors
 import java.util.Arrays
 import akka.{ NotUsed, Done }
@@ -98,7 +98,7 @@ object Main extends App {
 
 // def atMostOnceSource[K, V](settings: ConsumerSettings[K, V], subscription: Subscription): Source[ConsumerRecord[K, V], Control] 
 // committableSource[K, V](settings: ConsumerSettings[K, V], subscription: Subscription): Source[CommittableMessage[K, V], Control] 
- def transform(result: String): List[String] ={
+ def transformToWords(result: String): List[String] ={
     var retVal:List[String]=null
     try
     {
@@ -106,6 +106,7 @@ object Main extends App {
       var desc:String=retMap.get("description").getOrElse (" ")+" "+retMap.get("title").getOrElse (" ")
       desc=desc.replaceAll("<[^>]*>", " ").toLowerCase
       desc=desc.replaceAll("\\?|:|,|\\(|\\)|#|\\.|\"|'|\\p{C}|\\s+|\\r$|\\\\t|\\\\n|\\\\r", " ")
+      desc=desc.replaceAll("[\\W]|_", " ")
       val streamed:Stream[String]=desc.split(" +").toStream
       retVal=streamed
         .map(mes => mes.trim)
@@ -121,21 +122,55 @@ object Main extends App {
     }
     return retVal
 }
+  type ScanResult = (Seq[String], Option[Seq[String]])
 
+
+
+  def duplicates(prev: ScanResult, next: String): ScanResult = {
+    val (acc, result) = prev
+    acc match {
+      case l :+ last if last.equals(next) => (acc :+ next, None)
+      case l :+ last => (Seq(next), if (acc.size > 1) Some(acc) else None)
+    }
+  }
+//Par mots flatMapConcat
+/*
 val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
       .log("Before start")
-      .map(rec=>transform(rec.value()))
-     /* .map( line => line.get("description").getOrElse (" ")+" "+line.get("title").getOrElse (" "))
-      .map(_.replaceAll("<[^>]*>", " "))
-      .map( line => line.split(" +").toList.toStream
-        .map(_.replaceAll("'|\\p{C}|\\s+|\\r$|\\\\t|\\\\n|\\\\r", " ").trim)
-        .filter(it=>!stopWord.contains(it))
-        .filter(it=>!it.contains("http"))
-        .filter(it=>it.size>3)
-        .collect(Collectors.toList)
-      )*/
+      .map(rec=>transformToWords(rec.value()))
+      .flatMapConcat(i ⇒ Source(i))
+      .runForeach(x => println(x))(materializer)
+*/
+
+/* Group 
+      Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
+      .map(rec=>transformToWords(rec.value()))
+      .groupBy(2, _.contains("trump"))
+
+      .to(Sink.foreach(x => println(x))).run()
+*/
+/*
+def searchWord(result: List[String],word:String): List[String] ={
+  if(result.contains(word)){
+    return result
+  }
+  return List.empty
+}
+// Group and merge 
+Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
+      .map(rec=>transformToWords(rec.value()))
+      .groupBy(2, _.contains("trump"))
+      .map(a=>searchWord(a,"trump"))
+      .mergeSubstreams
+      // get a stream of word counts
       
-      .runForeach(x => print(x))(materializer)
+      .runForeach(x => println(x))(materializer)
+
+*/
+
+      //.to(Sink.foreach(println))
+      //.run()
+      //.runForeach(x => println(x))(materializer)
 
  /*val control =
       Consumer
