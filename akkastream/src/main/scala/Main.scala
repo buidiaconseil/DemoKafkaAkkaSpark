@@ -34,7 +34,7 @@ import akka.japi.Pair
 import akka.kafka.scaladsl.Consumer.DrainingControl
 import akka.util.Timeout
 import scala.util.{Failure, Success}
-
+import GraphDSL.Implicits._
 object Main extends App {
   private def getPipelineSource: Source[String, Future[IOResult]] = {
     FileIO.fromPath(Paths.get("../content.rss"))
@@ -149,13 +149,15 @@ val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("
 
       .to(Sink.foreach(x => println(x))).run()
 */
-/*
+
 def searchWord(result: List[String],word:String): List[String] ={
   if(result.contains(word)){
     return result
   }
   return List.empty
 }
+
+/*
 // Group and merge 
 Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
       .map(rec=>transformToWords(rec.value()))
@@ -167,6 +169,26 @@ Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
       .runForeach(x => println(x))(materializer)
 
 */
+
+val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
+      .log("Before start")
+      .map(rec=>transformToWords(rec.value()))
+
+val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =>
+  import GraphDSL.Implicits._
+  val in = source
+  val out = Sink.foreach(println)
+
+  val bcast = builder.add(Broadcast[List[String]](2))
+  val merge = builder.add(Merge[List[String]](2))
+
+  val f1, f2, f3, f4 = Flow[List[String]].map(searchWord(_,"trump"))
+
+  in ~> f1 ~> bcast ~> f2 ~> merge ~> f3 ~> out
+  bcast ~> f4 ~> merge
+  ClosedShape
+}).run
+
 
       //.to(Sink.foreach(println))
       //.run()
