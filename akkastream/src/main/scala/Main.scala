@@ -190,9 +190,9 @@ val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.B
   val idf = Flow[List[String]].map(idf(_))
   val f1, f2, f3, f4 = Flow[List[String]].map(searchWord(_,"trump"))
 
-  in ~> bcast ~> tf ~> zipIdfTf ~> out
-  bcast ~> idfprepare ~> zipIdf ~> idf ~> bcastIdf ~> zipIdfTf 
-  zipIdf <~ bcastIdf
+  in ~> bcast ~> tf ~> zipIdfTf.in0 ~> out
+  bcast ~> idfprepare ~> zipIdf.in0 ~> idf ~> bcastIdf ~> zipIdfTf.in1 
+  zipIdf.in1 <~ bcastIdf
 
   ClosedShape
 }).run
