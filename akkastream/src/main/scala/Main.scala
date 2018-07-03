@@ -180,12 +180,20 @@ val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.B
   val out = Sink.foreach(println)
 
   val bcast = builder.add(Broadcast[List[String]](2))
+  val bcastIdf = builder.add(Broadcast[List[String]](2))
   val merge = builder.add(Merge[List[String]](2))
+  val zipIdf = builder.add(Zip[Int, Int]())
+  val zipIdfTf = builder.add(Zip[Int, Int]())
 
+  val tf = Flow[List[String]].map(tf(_))
+  val idfprepare = Flow[List[String]].map(idfstart(_))
+  val idf = Flow[List[String]].map(idf(_))
   val f1, f2, f3, f4 = Flow[List[String]].map(searchWord(_,"trump"))
 
-  in ~> f1 ~> bcast ~> f2 ~> merge ~> f3 ~> out
-  bcast ~> f4 ~> merge
+  in ~> bcast ~> tf ~> zipIdfTf ~> out
+  bcast ~> idfprepare ~> zipIdf ~> idf ~> bcastIdf ~> zipIdfTf 
+  zipIdf <~ bcastIdf
+
   ClosedShape
 }).run
 
