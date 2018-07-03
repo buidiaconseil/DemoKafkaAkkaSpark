@@ -1,7 +1,8 @@
 import akka.stream._
 import akka.stream.scaladsl._
 
-
+import java.util.stream.Collectors
+import java.util.Arrays
 import akka.{ NotUsed, Done }
 import akka.actor.ActorSystem
 import akka.util.ByteString
@@ -42,6 +43,7 @@ object Main extends App {
       )
   }
   val mapper = new ObjectMapper();
+  mapper.registerModule(DefaultScalaModule)
   val stopWord: HashSet[String] = HashSet()
   val filename = "stopWord.txt"
   for (line <- scala.io.Source.fromFile(filename).getLines) {
@@ -93,14 +95,52 @@ object Main extends App {
         .withProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest")
   
   def business(key: String, value: String): Future[Done] = ???
-val sayFlow: Flow[String, String, akka.NotUsed] =
-    Flow[String].map { s =>
-      s + "."
+
+// def atMostOnceSource[K, V](settings: ConsumerSettings[K, V], subscription: Subscription): Source[ConsumerRecord[K, V], Control] 
+// committableSource[K, V](settings: ConsumerSettings[K, V], subscription: Subscription): Source[CommittableMessage[K, V], Control] 
+ def transform(result: String): List[String] ={
+    var retVal:List[String]=null
+    try
+    {
+      val retMap:Map[String, String]=mapper.readValue[Map[String, String]](result, classOf[Map[String,String]])
+      var desc:String=retMap.get("description").getOrElse (" ")+" "+retMap.get("title").getOrElse (" ")
+      desc=desc.replaceAll("<[^>]*>", " ").toLowerCase
+      desc=desc.replaceAll("\\?|:|,|\\(|\\)|#|\\.|\"|'|\\p{C}|\\s+|\\r$|\\\\t|\\\\n|\\\\r", " ")
+      val streamed:Stream[String]=desc.split(" +").toStream
+      retVal=streamed
+        .map(mes => mes.trim)
+        .filter(mes => !stopWord.contains(mes))
+        .filter(mes => !mes.contains("http"))
+        .filter(mes => !mes.isEmpty)
+        .filter(mes => mes.length>3).toList
+    } 
+    catch
+    {
+      case foo: Exception => foo.printStackTrace
+      case _: Throwable => println("Got some other kind of exception")
+    }
+    return retVal
 }
- val control =
+
+val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
+      .log("Before start")
+      .map(rec=>transform(rec.value()))
+     /* .map( line => line.get("description").getOrElse (" ")+" "+line.get("title").getOrElse (" "))
+      .map(_.replaceAll("<[^>]*>", " "))
+      .map( line => line.split(" +").toList.toStream
+        .map(_.replaceAll("'|\\p{C}|\\s+|\\r$|\\\\t|\\\\n|\\\\r", " ").trim)
+        .filter(it=>!stopWord.contains(it))
+        .filter(it=>!it.contains("http"))
+        .filter(it=>it.size>3)
+        .collect(Collectors.toList)
+      )*/
+      
+      .runForeach(x => print(x))(materializer)
+
+ /*val control =
       Consumer
-        .committableSource(consumerSettings, Subscriptions.topics("topic1"))
-        
+        .committableSource(consumerSettings, Subscriptions.topics("rss-flow"))
+      
         .mapAsync(10) { msg =>
           business(msg.record.key, msg.record.value).map(_ => msg.committableOffset)
         }
@@ -109,10 +149,10 @@ val sayFlow: Flow[String, String, akka.NotUsed] =
         .toMat(Sink.foreach(println))(Keep.both)
         .mapMaterializedValue(DrainingControl.apply)
         .run()
-         
+         */
     // #atLeastOnce
 
-    terminateWhenDone(control.drainAndShutdown())
+    //terminateWhenDone(control.drainAndShutdown())
 
   /*val control: Consumer.Control =
         Consumer
