@@ -191,7 +191,10 @@ def tfFun(words: List[String]): Map[String,Double] ={
 def idfFun( registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
   var nbCol=registry._1._1+registry._2._1
   val cache = collection.mutable.Map[String, Double]()
-  cache ++ registry._2._2
+  
+  for ( (k,v) <- registry._2._2) {
+      cache.put(k,v)
+  }
   for ( (k,v) <- registry._1._2) {
     var sum=v
     if(cache.contains(k)){
@@ -231,29 +234,35 @@ val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("
 val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =>
   import GraphDSL.Implicits._
   val in = source
+  val starter = Source[RegistryCounter](List[RegistryCounter]((0,collection.mutable.Map[String, Double]())))
   val out = Sink.foreach(println)
 
   
   val bcast = builder.add(Broadcast[List[String]](2))
-  /*
+  val merger = builder.add(Merge[RegistryCounter](2))
   val bcastIdf = builder.add(Broadcast[RegistryCounter](2))
   val zipIdf = builder.add(Zip[RegistryCounter, RegistryCounter]())
-   */
+  
   val zipIdfTf = builder.add(Zip[Map[String,Double], RegistryCounter]())
   
 
   val tf = Flow[List[String]].map(tfFun(_)).log("tf")
   
   val idfprepare = Flow[List[String]].map(idfstart(_))
-  /*
+  
   val idf = Flow[(RegistryCounter,RegistryCounter)].map(idfFun(_))
-  */
+  
   val mergetfidf = Flow[(Map[String,Double], RegistryCounter)].map(mergetfidfFun(_))
   
 
-  in ~>  bcast ~>             tf ~>     zipIdfTf.in0        
-         bcast ~> idfprepare ~>         zipIdfTf.in1 
-                                        zipIdfTf.out ~>  mergetfidf  ~> out
+  in ~>  bcast ~>             tf ~>                                zipIdfTf.in0        
+         bcast ~> idfprepare ~>   zipIdf.in0
+                                  zipIdf.out ~> idf ~> bcastIdf ~> zipIdfTf.in1 
+                    merger         <~                  bcastIdf
+         starter ~> merger 
+                    merger.out ~> zipIdf.in1       
+                                  
+                                                                   zipIdfTf.out ~>  mergetfidf  ~> out
   /*in ~> bcast ~>                  tf ~>                         zipIdfTf.in0 
         bcast ~> idfprepare ~> zipIdf.in0 
                                zipIdf.out ~> idf ~> bcastIdf ~> zipIdfTf.in1 
