@@ -186,9 +186,21 @@ def tfFun(words: List[String]): Map[String,Int] ={
   return cache
 }
  type RegistryCounter = (Int, Map[String,Int])
-def idfFun(registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
+
+
+def idfFun( registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
+  var nbCol=registry._1._1+registry._2._1
+  val cache = collection.mutable.Map[String, Int]()
+  cache ++ registry._2._2
+  for ( (k,v) <- registry._1._2) {
+    var sum=v
+    if(cache.contains(k)){
+      sum=sum+cache(k)
+    }
+    cache.put(k,sum)
+  }
   
-  return registry._1
+  return (nbCol,cache)
 }
 
 def idfstart(words: List[String]): RegistryCounter ={
@@ -201,10 +213,16 @@ def idfstart(words: List[String]): RegistryCounter ={
   return (1,cache)
 }
 
-def mergetfidfFun(words: (scala.collection.mutable.Map[String,Int], (Int, scala.collection.mutable.Map[String,Int]))): Map[String,Int] ={
-  
-  
-  return null
+def mergetfidfFun(words: (Map[String,Int], RegistryCounter)): Map[String,Int] ={
+  val cache = collection.mutable.Map[String, Int]()
+  cache ++ words._1
+  var nbDoc=words._2._1
+  for ( (k,v) <- cache) {
+      if (words._2._2.contains(k)){
+        cache.put(k,v*nbDoc/words._2._2(k))
+      }
+  }
+  return cache
 }
 
 val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
@@ -222,7 +240,7 @@ val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.B
   //val unzipIdf = builder.add(Unzip[RegistryCounter, RegistryCounter]())
   val zipIdfTf = builder.add(Zip[Map[String,Int], RegistryCounter]())
 
-  val tf = Flow[List[String]].map(tfFun(_))
+  val tf = Flow[List[String]].map(tfFun(_)).log("tf")
   val idfprepare = Flow[List[String]].map(idfstart(_))
   val idf = Flow[(RegistryCounter,RegistryCounter)].map(idfFun(_))
   val mergetfidf = Flow[(Map[String,Int], RegistryCounter)].map(mergetfidfFun(_))
