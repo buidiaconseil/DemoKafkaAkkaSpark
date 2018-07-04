@@ -47,7 +47,7 @@ object Main extends App {
   val mapper = new ObjectMapper();
   mapper.registerModule(DefaultScalaModule)
   val stopWord: HashSet[String] = HashSet()
-  val filename = "stopWord.txt"
+  val filename = "stopword.txt"
   for (line <- scala.io.Source.fromFile(filename).getLines) {
     stopWord += line
   }
