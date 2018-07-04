@@ -11,6 +11,7 @@ import scala.concurrent.duration._
 import java.nio.file.Paths
 import scala.collection.mutable._
 import akka.kafka._
+import scala.math._
 import akka.kafka.ConsumerSettings 
 import akka.kafka.scaladsl.Consumer
 import akka.kafka.scaladsl.Producer
@@ -221,7 +222,7 @@ def mergetfidfFun(words: (Map[String,Double], RegistryCounter)): Map[String,Doub
   var nbDoc=words._2._1
   for ( (k,v) <- words._1) {
       if (words._2._2.contains(k)){
-        cache.put(k,v*nbDoc/words._2._2(k))
+        cache.put(k,v*log10(nbDoc/words._2._2(k)))
       }
   }
   return cache
