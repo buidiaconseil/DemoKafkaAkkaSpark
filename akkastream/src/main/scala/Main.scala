@@ -35,6 +35,7 @@ import akka.kafka.scaladsl.Consumer.DrainingControl
 import akka.util.Timeout
 import scala.util.{Failure, Success}
 import GraphDSL.Implicits._
+
 object Main extends App {
   private def getPipelineSource: Source[String, Future[IOResult]] = {
     FileIO.fromPath(Paths.get("../content.rss"))
@@ -170,6 +171,42 @@ Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
 
 */
 
+def tfFun(words: List[String]): Map[String,Int] ={
+  val cache = collection.mutable.Map[String, Int]()
+  for ( word <- words ) {
+    var nb = 0
+      for ( wordCount <- words ) {
+        if (word.equals(wordCount)){
+            nb = nb + 1
+        }
+      }
+    cache.put(word,nb/words.size)
+  }
+  
+  return cache
+}
+ type RegistryCounter = (Int, Map[String,Int])
+def idfFun(registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
+  
+  return registry._1
+}
+
+def idfstart(words: List[String]): RegistryCounter ={
+  val cache = collection.mutable.Map[String, Int]()
+  for ( word <- words ) {
+   
+    cache.put(word,1)
+  }
+  
+  return (1,cache)
+}
+
+def mergetfidfFun(words: (scala.collection.mutable.Map[String,Int], (Int, scala.collection.mutable.Map[String,Int]))): Map[String,Int] ={
+  
+  
+  return null
+}
+
 val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
       .log("Before start")
       .map(rec=>transformToWords(rec.value()))
@@ -180,19 +217,24 @@ val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.B
   val out = Sink.foreach(println)
 
   val bcast = builder.add(Broadcast[List[String]](2))
-  val bcastIdf = builder.add(Broadcast[List[String]](2))
-  val merge = builder.add(Merge[List[String]](2))
-  val zipIdf = builder.add(Zip[Int, Int]())
-  val zipIdfTf = builder.add(Zip[Int, Int]())
+  val bcastIdf = builder.add(Broadcast[RegistryCounter](2))
+  val zipIdf = builder.add(Zip[RegistryCounter, RegistryCounter]())
+  //val unzipIdf = builder.add(Unzip[RegistryCounter, RegistryCounter]())
+  val zipIdfTf = builder.add(Zip[Map[String,Int], RegistryCounter]())
 
-  val tf = Flow[List[String]].map(tf(_))
+  val tf = Flow[List[String]].map(tfFun(_))
   val idfprepare = Flow[List[String]].map(idfstart(_))
-  val idf = Flow[List[String]].map(idf(_))
-  val f1, f2, f3, f4 = Flow[List[String]].map(searchWord(_,"trump"))
+  val idf = Flow[(RegistryCounter,RegistryCounter)].map(idfFun(_))
+  val mergetfidf = Flow[(Map[String,Int], RegistryCounter)].map(mergetfidfFun(_))
 
-  in ~> bcast ~> tf ~> zipIdfTf.in0 ~> out
-  bcast ~> idfprepare ~> zipIdf.in0 ~> idf ~> bcastIdf ~> zipIdfTf.in1 
-  zipIdf.in1 <~ bcastIdf
+
+  
+  in ~> bcast ~>                  tf ~>                         zipIdfTf.in0 
+        bcast ~> idfprepare ~> zipIdf.in0 
+                               zipIdf.out ~> idf ~> bcastIdf ~> zipIdfTf.in1 
+                                                                zipIdfTf.out ~>  mergetfidf  ~> out
+                               zipIdf.in1 <~        bcastIdf
+
 
   ClosedShape
 }).run
