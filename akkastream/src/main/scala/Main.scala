@@ -171,26 +171,26 @@ Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
 
 */
 
-def tfFun(words: List[String]): Map[String,Int] ={
-  val cache = collection.mutable.Map[String, Int]()
+def tfFun(words: List[String]): Map[String,Double] ={
+  val cache = collection.mutable.Map[String, Double]()
   for ( word <- words ) {
-    var nb = 0
-      for ( wordCount <- words ) {
-        if (word.equals(wordCount)){
-            nb = nb + 1
-        }
+    var nb = 0.0
+    for ( wordCount <- words ) {
+      if (word == wordCount){
+            nb = nb + 1.0
       }
-    cache.put(word,nb/words.size)
+    }
+    cache.put(word,nb/words.size.toDouble)
   }
   
   return cache
 }
- type RegistryCounter = (Int, Map[String,Int])
+ type RegistryCounter = (Double, Map[String,Double])
 
 
 def idfFun( registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
   var nbCol=registry._1._1+registry._2._1
-  val cache = collection.mutable.Map[String, Int]()
+  val cache = collection.mutable.Map[String, Double]()
   cache ++ registry._2._2
   for ( (k,v) <- registry._1._2) {
     var sum=v
@@ -204,7 +204,7 @@ def idfFun( registry: (RegistryCounter,RegistryCounter)): RegistryCounter ={
 }
 
 def idfstart(words: List[String]): RegistryCounter ={
-  val cache = collection.mutable.Map[String, Int]()
+  val cache = collection.mutable.Map[String, Double]()
   for ( word <- words ) {
    
     cache.put(word,1)
@@ -213,11 +213,10 @@ def idfstart(words: List[String]): RegistryCounter ={
   return (1,cache)
 }
 
-def mergetfidfFun(words: (Map[String,Int], RegistryCounter)): Map[String,Int] ={
-  val cache = collection.mutable.Map[String, Int]()
-  cache ++ words._1
+def mergetfidfFun(words: (Map[String,Double], RegistryCounter)): Map[String,Double] ={
+  val cache = collection.mutable.Map[String, Double]()
   var nbDoc=words._2._1
-  for ( (k,v) <- cache) {
+  for ( (k,v) <- words._1) {
       if (words._2._2.contains(k)){
         cache.put(k,v*nbDoc/words._2._2(k))
       }
@@ -234,26 +233,34 @@ val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.B
   val in = source
   val out = Sink.foreach(println)
 
+  
   val bcast = builder.add(Broadcast[List[String]](2))
+  /*
   val bcastIdf = builder.add(Broadcast[RegistryCounter](2))
   val zipIdf = builder.add(Zip[RegistryCounter, RegistryCounter]())
-  //val unzipIdf = builder.add(Unzip[RegistryCounter, RegistryCounter]())
-  val zipIdfTf = builder.add(Zip[Map[String,Int], RegistryCounter]())
+   */
+  val zipIdfTf = builder.add(Zip[Map[String,Double], RegistryCounter]())
+  
 
   val tf = Flow[List[String]].map(tfFun(_)).log("tf")
-  val idfprepare = Flow[List[String]].map(idfstart(_))
-  val idf = Flow[(RegistryCounter,RegistryCounter)].map(idfFun(_))
-  val mergetfidf = Flow[(Map[String,Int], RegistryCounter)].map(mergetfidfFun(_))
-
-
   
-  in ~> bcast ~>                  tf ~>                         zipIdfTf.in0 
+  val idfprepare = Flow[List[String]].map(idfstart(_))
+  /*
+  val idf = Flow[(RegistryCounter,RegistryCounter)].map(idfFun(_))
+  */
+  val mergetfidf = Flow[(Map[String,Double], RegistryCounter)].map(mergetfidfFun(_))
+  
+
+  in ~>  bcast ~>             tf ~>     zipIdfTf.in0        
+         bcast ~> idfprepare ~>         zipIdfTf.in1 
+                                        zipIdfTf.out ~>  mergetfidf  ~> out
+  /*in ~> bcast ~>                  tf ~>                         zipIdfTf.in0 
         bcast ~> idfprepare ~> zipIdf.in0 
                                zipIdf.out ~> idf ~> bcastIdf ~> zipIdfTf.in1 
                                                                 zipIdfTf.out ~>  mergetfidf  ~> out
                                zipIdf.in1 <~        bcastIdf
 
-
+  */
   ClosedShape
 }).run
 
