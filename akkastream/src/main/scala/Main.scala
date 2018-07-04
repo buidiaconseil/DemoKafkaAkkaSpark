@@ -36,7 +36,7 @@ import akka.kafka.scaladsl.Consumer.DrainingControl
 import akka.util.Timeout
 import scala.util.{Failure, Success}
 import GraphDSL.Implicits._
-
+//https://www.linkedin.com/pulse/databricks-apache-spark-streaming-twitter4j-machine-ml-weichberger/
 object Main extends App {
   private def getPipelineSource: Source[String, Future[IOResult]] = {
     FileIO.fromPath(Paths.get("../content.rss"))
