@@ -8,10 +8,10 @@ from kafka import KafkaProducer
 from kafka.errors import KafkaError
 import time
 from time import sleep
-#docker run -d --name kafka -p 9999:9999 -p 9092:9092 -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --network kafka-net XXXXXXXXXXXXXXXXXXXXXXXXXXX
+#docker run -d --name kafka -p 9999:9999 -p 9092:9092 --env KAFKA_ADVERTISED_HOST_NAME=kafka -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --network kafka-net XXXXXXXXXXXXXXXXXXXXXXXXXXX
 #create the object, assign it to a variable
 count = 0
-nbitems = 10000
+nbitems = 10187
 nbseconds = 60
 lastcount = 0
 topicName = 'rss-flow'
