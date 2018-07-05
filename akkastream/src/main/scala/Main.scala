@@ -230,7 +230,7 @@ def mergetfidfFun(words: (Map[String,Double], RegistryCounter)): Map[String,Doub
 }
 
 val source =  Consumer.atMostOnceSource(consumerSettings, Subscriptions.topics("rss-flow"))
-      .log("Before start")
+      .log("Graph")
       .map(rec=>transformToWords(rec.value()))
 
 val g = RunnableGraph.fromGraph(GraphDSL.create() { implicit builder: GraphDSL.Builder[NotUsed] =>

@@ -12,3 +12,4 @@ libraryDependencies += "com.typesafe.akka" %% "akka-stream-kafka" % "0.22"
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.8.4"
 libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.8.4"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.3" % Runtime
+libraryDependencies += "org.apache.spark"  %  "spark-streaming-kafka-0-10_2.11" % "2.3.1"
