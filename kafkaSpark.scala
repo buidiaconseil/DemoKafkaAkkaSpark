@@ -10,11 +10,11 @@ spark.conf.set("spark.default.parallelism", 10)
 val kafka = spark.readStream.format("kafka").option("kafka.bootstrap.servers", "kafka:9092").option("subscribe", "rss-flow").option("startingOffsets", "earliest").load()
 
 // split lines by whitespace and explode the array as rows of `word`
-var df = kafka.withWatermark("timestamp", "1 seconds").select($"timestamp",explode(split(get_json_object(($"value").cast("string"), "$.description"), "\\s+")).as("word"))
-df = df.groupBy($"word",window($"timestamp", "1 seconds")).count
+var df = kafka.withWatermark("timestamp", "5 seconds").select($"timestamp",explode(split(get_json_object(($"value").cast("string"), "$.description"), "\\s+")).as("word"))
+df = df.groupBy($"word",window($"timestamp", "5 seconds")).count
 
 
-val query = df.writeStream.outputMode("append").format("console").trigger(ProcessingTime("15 seconds")).start()
+val query = df.writeStream.outputMode("append").format("console").trigger(ProcessingTime("5 seconds")).start()
 query.awaitTermination()
 
 // follow the word counts as it updates
