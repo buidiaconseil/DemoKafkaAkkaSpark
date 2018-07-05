@@ -12,7 +12,7 @@ from time import sleep
 #create the object, assign it to a variable
 count = 0
 nbitems = 10187
-nbseconds = 60
+nbseconds = 3600
 lastcount = 0
 topicName = 'rss-flow'
 millis = time.time() * 1000.0
