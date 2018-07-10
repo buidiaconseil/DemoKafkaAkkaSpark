@@ -20,12 +20,13 @@ val kafka2 = spark.readStream.format("kafka").option("kafka.bootstrap.servers", 
 
 // split lines by whitespace and explode the array as rows of `word`
 var df2 = kafka2.withWatermark("timestamp", "5 seconds").select($"timestamp",get_json_object(($"value").cast("string"), "$.title").as("description"))
-df2 = df2.groupBy($"description",window($"timestamp", "5 seconds")).count()
+df2 = df2.groupBy(window($"timestamp", "5 seconds"),$"description").count()
 val query2 = df2.writeStream.queryName("description").outputMode("complete").format("memory").start()
-
+spark.sql("select * from description").count
 Thread.sleep(6000)
 
-val descript=spark.sql("select * from description")
+val descript=spark.sql("select description from description").distinct
+descript.show()
 
 val tokenizer = new Tokenizer().setInputCol("description").setOutputCol("words")
 val wordsData = tokenizer.transform(descript.na.drop(Array("description")))
@@ -40,4 +41,5 @@ val idfModel = idf.fit(featurizedData)
 
 val rescaledData = idfModel.transform(featurizedData)
 rescaledData.select("description", "words","features").show()
+rescaledData.head
 
