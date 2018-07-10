@@ -11,7 +11,7 @@ from time import sleep
 #docker run -d --name kafka -p 9999:9999 -p 9092:9092 --env KAFKA_ADVERTISED_HOST_NAME=kafka -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --network kafka-net XXXXXXXXXXXXXXXXXXXXXXXXXXX
 #create the object, assign it to a variable
 count = 0
-nbitems = 10187
+nbitems = 10260
 nbseconds = 3600
 lastcount = 0
 topicName = 'rss-flow'
