@@ -6,7 +6,10 @@ Demo of RSS management and Reporting with Kafka Akka and Spark
 - SBT installed
 - Kafka started
     see https://hub.docker.com/r/wurstmeister/kafka/
-    
+
+# See the Presentation
+
+
 
 
 
