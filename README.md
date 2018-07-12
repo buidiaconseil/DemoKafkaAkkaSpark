@@ -54,8 +54,9 @@ This first demo launch a consumer,get every 5 seconds the json description, push
 # License
 See LICENSE file
 
- Copyright 2018 Buisson Diaz Conseil
-  Licensed under the Apache License, Version 2.0 (the "License")
+ Copyright 2018 Buisson Diaz Conseil [Buisson Diaz Conseil](http://www.buissondiaz.com)
+ 
+ Licensed under the Apache License, Version 2.0 (the "License")
 
 
 
